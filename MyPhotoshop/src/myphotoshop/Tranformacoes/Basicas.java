@@ -115,4 +115,41 @@ public class Basicas {
         }
         return SwingFXUtils.toFXImage(bimagedest, null);
     }
+
+    public static Image sobel(Image img)
+    {
+        img = media(img,3);
+        BufferedImage bimagem,bimagedest;
+        
+        bimagem = SwingFXUtils.fromFXImage(img, null);
+        bimagedest = new BufferedImage(bimagem.getWidth(),
+            bimagem.getHeight(),
+            bimagem.getType());
+        WritableRaster raster = bimagem.getRaster();
+        WritableRaster rasterdest = bimagedest.getRaster();
+        int[] pixel = {0,0,0,0};
+        int z1,z2,z3,z4,z5,z6,z7,z8,z9;
+        for (int i = 1; i < img.getHeight()-1; i++) 
+        {
+            for (int j = 1; j < img.getWidth()-1; j++) 
+            {
+                raster.getPixel(j-1, i-1, pixel);   z1 = pixel[0];
+                raster.getPixel(j, i-1, pixel);     z2 = pixel[0];
+                raster.getPixel(j+1, i-1, pixel);   z3 = pixel[0];
+                raster.getPixel(j-1, i, pixel);     z4 = pixel[0];
+                raster.getPixel(j+1, i, pixel);     z6 = pixel[0];
+                raster.getPixel(j-1, i+1, pixel);   z7 = pixel[0];
+                raster.getPixel(j, i+1, pixel);     z8 = pixel[0];
+                raster.getPixel(j+1, i+1, pixel);   z9 = pixel[0];
+                
+                pixel[0] = pixel[1] = pixel[2] = (int)
+                        Math.sqrt(Math.pow((z7+2*z8+z9)-(z1+2*z2+z3),2) + 
+                                Math.pow((z3+2*z6+z9)-(z1+2*z4+z7), 2));
+                rasterdest.setPixel(j, i, pixel);
+            }
+        }
+        
+        return SwingFXUtils.toFXImage(bimagedest, null);
+    }
+    
 }

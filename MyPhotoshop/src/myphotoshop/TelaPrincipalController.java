@@ -11,10 +11,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
@@ -58,6 +58,7 @@ public class TelaPrincipalController implements Initializable {
     private void evtAbrir(ActionEvent event) {
         FileChooser file = new FileChooser();
         //colocar filtros para extençõs de imagens
+        file.getExtensionFilters().addAll(new ExtensionFilter("imagem","*.png","*.jpg","*.jpeg","*.gif"));
         arq = file.showOpenDialog(null);
         if(arq!=null)
         {
@@ -132,6 +133,17 @@ public class TelaPrincipalController implements Initializable {
         imageview.setImage(ImageJprocess.detborda(img));
     }
 
+    @FXML
+    private void evtinverter(ActionEvent event) {
+        img = imageview.getImage();
+        imageview.setImage(ImageJprocess.inverter(img));
+    }
+
+    @FXML
+    private void evtSmooth(ActionEvent event) {
+        img = imageview.getImage();
+        imageview.setImage(ImageJprocess.suavizacao(img));
+    }
     
     
     

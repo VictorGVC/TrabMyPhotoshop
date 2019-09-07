@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myphotoshop.TelaPrincipalController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myphotoshop.TelaPrincipalController">
    <top>
       <VBox prefHeight="61.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -41,6 +41,10 @@
                               <MenuItem onAction="#evtErosao" text="_Erosão" />
                               <MenuItem onAction="#evtDilatacao" text="_Dilatação" />
                               <MenuItem onAction="#evtDetecBorda" text="_Detectar Borda" />
+                              <MenuItem onAction="#evtinverter" text="_Inverter" />
+                              <MenuItem onAction="#evtSmooth" text="_Suavisar" />
+                              <MenuItem text="Unspecified Action" />
+                              <MenuItem mnemonicParsing="false" text="Unspecified Action" />
                            </items>
                         </Menu>
                      </items>

@@ -43,4 +43,28 @@ public class ImageJprocess
         
         return SwingFXUtils.toFXImage(imgplus.getBufferedImage(), null);
     }
+    
+    public static Image inverter(Image img) 
+    {
+        BufferedImage bimagem;
+        bimagem = SwingFXUtils.fromFXImage(img, null);
+        ImagePlus imgplus = new ImagePlus();
+        imgplus.setImage(bimagem);
+        ImageProcessor ipr = imgplus.getProcessor();
+        ipr.invert();
+        
+        return SwingFXUtils.toFXImage(imgplus.getBufferedImage(), null);
+    }
+    
+    public static Image suavizacao(Image img) 
+    {
+        BufferedImage bimagem;
+        bimagem = SwingFXUtils.fromFXImage(img, null);
+        ImagePlus imgplus = new ImagePlus();
+        imgplus.setImage(bimagem);
+        ImageProcessor ipr = imgplus.getProcessor();
+        ipr.smooth();
+        
+        return SwingFXUtils.toFXImage(imgplus.getBufferedImage(), null);
+    }
 }

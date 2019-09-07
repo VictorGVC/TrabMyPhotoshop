@@ -1,7 +1,8 @@
 package myphotoshop.Tranformacoes;
 
-import com.sun.corba.se.spi.ior.Writeable;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.awt.image.IndexColorModel;
 import java.awt.image.WritableRaster;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
@@ -28,6 +29,23 @@ public class Basicas {
             }
         }
         return SwingFXUtils.toFXImage(bimagem, null);
+    }
+    
+    public static Image pretoebranco(Image img)
+    {
+        BufferedImage bimagem = SwingFXUtils.fromFXImage(img, null);
+        
+        int larg = bimagem.getWidth();
+        int alt = bimagem.getHeight();
+        byte[] comp = { 0, -1 };
+        IndexColorModel cm = new IndexColorModel(2, 2, comp, comp, comp);
+        BufferedImage bimagem2 = new BufferedImage(larg, alt, BufferedImage.TYPE_BYTE_INDEXED, cm);
+        Graphics2D mudado = bimagem2.createGraphics();
+        
+        mudado.drawRenderedImage(bimagem, null);
+        mudado.dispose();
+        
+        return SwingFXUtils.toFXImage(bimagem2, null);
     }
     
     public static Image media(Image img,int dim)

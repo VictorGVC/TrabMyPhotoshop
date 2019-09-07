@@ -135,6 +135,7 @@ public class TelaPrincipalController implements Initializable {
     @FXML
     private void evtPretoebranco(ActionEvent event) {
         flag = true;
+        imageview.setImage(Basicas.pretoebranco(img));
     }
 
     @FXML

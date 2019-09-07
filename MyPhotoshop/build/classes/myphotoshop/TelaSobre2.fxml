@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" onMouseDragged="#evtMouseDragged" onMousePressed="#evtMousePressed" prefHeight="219.0" prefWidth="429.0" style="-fx-border-color: blue;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myphotoshop.TelaSobreController2">
+   <children>
+      <Label fx:id="lbnomearq" layoutX="41.0" layoutY="45.0" prefHeight="17.0" prefWidth="359.0" text="Nome do arquivo:" />
+      <Label fx:id="lbdimimage" layoutX="41.0" layoutY="91.0" prefHeight="17.0" prefWidth="359.0" text="Dimensão da imagem:" />
+      <Label fx:id="lbtamarq" layoutX="41.0" layoutY="150.0" prefHeight="17.0" prefWidth="359.0" text="Tamanho do arquivo:" />
+      <Button layoutX="388.0" layoutY="14.0" mnemonicParsing="false" onAction="#evtFechar" style="-fx-background-color: transparent;" text="X" />
+   </children>
+</AnchorPane>

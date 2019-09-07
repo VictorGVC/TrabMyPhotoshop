@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="219.0" prefWidth="429.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="myphotoshop.TelaSobreController">
+   <children>
+      <Label fx:id="lbnomearq" layoutX="41.0" layoutY="45.0" prefHeight="17.0" prefWidth="359.0" text="Nome do arquivo:" />
+      <Label fx:id="lbdimimage" layoutX="41.0" layoutY="91.0" prefHeight="17.0" prefWidth="359.0" text="Dimensão da imagem:" />
+      <Label fx:id="lbtamarq" layoutX="41.0" layoutY="150.0" prefHeight="17.0" prefWidth="359.0" text="Tamanho do arquivo:" />
+   </children>
+</AnchorPane>

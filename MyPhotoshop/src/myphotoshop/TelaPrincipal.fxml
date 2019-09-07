@@ -43,8 +43,8 @@
                               <MenuItem onAction="#evtDetecBorda" text="_Detectar Borda" />
                               <MenuItem onAction="#evtinverter" text="_Inverter" />
                               <MenuItem onAction="#evtSmooth" text="_Suavisar" />
-                              <MenuItem text="Unspecified Action" />
-                              <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                              <MenuItem onAction="#evtAfiar" text="_Afiar" />
+                              <MenuItem onAction="#evtRuido" text="_Ruido" />
                            </items>
                         </Menu>
                      </items>

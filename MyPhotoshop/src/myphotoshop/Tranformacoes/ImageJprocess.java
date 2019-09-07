@@ -67,4 +67,28 @@ public class ImageJprocess
         
         return SwingFXUtils.toFXImage(imgplus.getBufferedImage(), null);
     }
+    
+    public static Image Afiar(Image img) 
+    {
+        BufferedImage bimagem;
+        bimagem = SwingFXUtils.fromFXImage(img, null);
+        ImagePlus imgplus = new ImagePlus();
+        imgplus.setImage(bimagem);
+        ImageProcessor ipr = imgplus.getProcessor();
+        ipr.sharpen();
+        
+        return SwingFXUtils.toFXImage(imgplus.getBufferedImage(), null);
+    }
+    
+    public static Image ruido(Image img) 
+    {
+        BufferedImage bimagem;
+        bimagem = SwingFXUtils.fromFXImage(img, null);
+        ImagePlus imgplus = new ImagePlus();
+        imgplus.setImage(bimagem);
+        ImageProcessor ipr = imgplus.getProcessor();
+        ipr.noise(30);
+        
+        return SwingFXUtils.toFXImage(imgplus.getBufferedImage(), null);
+    }
 }

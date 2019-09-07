@@ -3,5 +3,5 @@
 c) Opção Fechar: verificar se houve alterações na imagem, caso positivo pergunte se o usuário deseja salvar.
 d) Habilite e desabilite as opções dos menus, de acordo com a interação do usuário
 e) faça as opções: tons de cinza, preto e branco, negativo, passa-baixa/borramento (média, média dos k-vizinhos mais próximos, mediana), passa-alta/detector de bordas (Prewitt, Sobel), espelhar horizontal e vertical.
-f) Crie mais quatro opções de processamento de imagens, utilizando a biblioteca ImageJ
+(Feito) Crie mais quatro opções de processamento de imagens, utilizando a biblioteca ImageJ
 (Feito) No menu help, coloque a opção "Sobre" que deve abrir uma janela com informações sobre o aplicativo.

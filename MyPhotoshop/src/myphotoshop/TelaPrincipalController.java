@@ -144,7 +144,17 @@ public class TelaPrincipalController implements Initializable {
         img = imageview.getImage();
         imageview.setImage(ImageJprocess.suavizacao(img));
     }
-    
-    
+
+    @FXML
+    private void evtAfiar(ActionEvent event) {
+        img = imageview.getImage();
+        imageview.setImage(ImageJprocess.Afiar(img));
+    }
+
+    @FXML
+    private void evtRuido(ActionEvent event) {
+        img = imageview.getImage();
+        imageview.setImage(ImageJprocess.ruido(img));
+    }
     
 }

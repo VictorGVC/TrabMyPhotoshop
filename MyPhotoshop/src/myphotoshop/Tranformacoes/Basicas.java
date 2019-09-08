@@ -152,4 +152,49 @@ public class Basicas {
         return SwingFXUtils.toFXImage(bimagedest, null);
     }
     
+    public static Image invertVertical(Image img)
+    {
+        BufferedImage bimagem;
+        bimagem = SwingFXUtils.fromFXImage(img, null);
+        WritableRaster raster = bimagem.getRaster();
+        int[] pixel = {0,0,0,0};
+        int[] pixel2 = {0,0,0,0};
+        int cinza;
+        
+        for (int i = 0; i < img.getHeight()/2; i++) 
+        {
+            for (int j = 0; j < img.getWidth(); j++) 
+            {
+                raster.getPixel(j, i, pixel);
+                raster.getPixel(j, (int) (img.getHeight()-i-1), pixel2);
+                raster.setPixel(j, (int) (img.getHeight()-i-1), pixel);
+                raster.setPixel(j, i, pixel2);
+            }
+        }
+        return SwingFXUtils.toFXImage(bimagem, null);
+    }
+    
+    public static Image invertHorizontal(Image img)
+    {
+        BufferedImage bimagem;
+        bimagem = SwingFXUtils.fromFXImage(img, null);
+        WritableRaster raster = bimagem.getRaster();
+        int[] pixel = {0,0,0,0};
+        int[] pixel2 = {0,0,0,0};
+        int cinza;
+        
+        for (int i = 0; i < img.getHeight(); i++) 
+        {
+            for (int j = 0; j < img.getWidth()/2; j++) 
+            {
+                raster.getPixel(j, i, pixel);
+                raster.getPixel((int) (img.getWidth()-j-1), i, pixel2);
+                raster.setPixel((int) (img.getWidth()-j-1), i, pixel);
+                raster.setPixel(j, i, pixel2);
+            }
+        }
+        return SwingFXUtils.toFXImage(bimagem, null);
+    }
+    
+    
 }

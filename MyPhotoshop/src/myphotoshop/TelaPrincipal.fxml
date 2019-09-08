@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -9,6 +10,7 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myphotoshop.TelaPrincipalController">
@@ -17,16 +19,16 @@
          <children>
             <MenuBar>
               <menus>
-                <Menu mnemonicParsing="false" text="_Arquivo">
+                <Menu fx:id="arquivom" mnemonicParsing="false" text="_Arquivo">
                   <items>
                     <MenuItem onAction="#evtAbrir" text="_Abrir" />
-                        <MenuItem onAction="#evtSalvar" text="_Salvar" />
-                        <MenuItem onAction="#evtSalvarComo" text="_Salvar_Como" />
+                        <MenuItem fx:id="salvarm" onAction="#evtSalvar" text="_Salvar" />
+                        <MenuItem fx:id="salvarcomom" onAction="#evtSalvarComo" text="_Salvar_Como" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem onAction="#evtFechar" text="_Fechar" />
+                        <MenuItem fx:id="fecharm" onAction="#evtFechar" text="_Fechar" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="_Ferramentas">
+                <Menu fx:id="ferramentasm" mnemonicParsing="false" text="_Ferramentas">
                      <items>
                         <Menu text="_Básicas">
                           <items>
@@ -34,6 +36,9 @@
                               <MenuItem onAction="#evtPretoebranco" text="_Preto e branco" />
                               <MenuItem onAction="#evtMedia" text="_Passa Baixa(Media)" />
                               <MenuItem onAction="#evtPPrewitt" text="_Prewitt" />
+                              <MenuItem onAction="#evtSobel" text="_Sobel" />
+                              <MenuItem onAction="#evtInvertVertical" text="_Inverter verticalmente" />
+                              <MenuItem onAction="#evtInvertHorizontal" text="_Inverter Horizontalmente" />
                           </items>
                         </Menu>
                         <Menu text="_ImageJ">
@@ -49,16 +54,21 @@
                         </Menu>
                      </items>
                 </Menu>
-                <Menu mnemonicParsing="false" onAction="#evtSobre" text="Ajuda">
+                <Menu fx:id="ajudam" mnemonicParsing="false" onAction="#evtSobre" text="Ajuda">
                   <items>
                     <MenuItem mnemonicParsing="false" text="About" />
                   </items>
                 </Menu>
               </menus>
             </MenuBar>
-            <ToolBar prefHeight="32.0" prefWidth="600.0">
+            <ToolBar prefHeight="32.0" prefWidth="61.0">
               <items>
-                <Button maxHeight="34.0" maxWidth="34.0" minHeight="34.0" minWidth="34.0" mnemonicParsing="false" onAction="#evtSalvar" prefHeight="34.0" prefWidth="34.0" style="-fx-background-image: url('icones/salvar24.png'); -fx-background-repeat: no-repeat; -fx-background-position: center center; -fx-background-color: transparent;" />
+                <Button fx:id="btsalvar" maxHeight="34.0" maxWidth="34.0" minHeight="34.0" minWidth="34.0" mnemonicParsing="false" onAction="#evtSalvar" prefHeight="34.0" prefWidth="34.0" style="-fx-background-image: url('icones/salvar24.png'); -fx-background-repeat: no-repeat; -fx-background-position: center center; -fx-background-color: transparent;" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="532.0">
+                     <children>
+                        <Button fx:id="btfechar" mnemonicParsing="false" onAction="#evtFechar" prefHeight="25.0" prefWidth="55.0" text="Fechar" textOverrun="WORD_ELLIPSIS" />
+                     </children>
+                  </HBox>
               </items>
             </ToolBar>
          </children>
@@ -69,6 +79,14 @@
          <content>
             <ImageView fx:id="imageview" fitHeight="508.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
          </content>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem onAction="#evtSobreaimagem" text="_sobre1" />
+                  <MenuItem onAction="#evtSobreaimagem2" text="_sobre2" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
       </ScrollPane>
    </center>
 </BorderPane>

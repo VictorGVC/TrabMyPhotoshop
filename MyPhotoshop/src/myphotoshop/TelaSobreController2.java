@@ -26,6 +26,26 @@ public class TelaSobreController2 implements Initializable {
         this.altura = altura;
     }
 
+    public void setLbnomearq(Label lbnomearq) {
+        this.lbnomearq = lbnomearq;
+    }
+
+    public void setLbdimimage(Label lbdimimage) {
+        this.lbdimimage = lbdimimage;
+    }
+
+    public void setLbtamarq(Label lbtamarq) {
+        this.lbtamarq = lbtamarq;
+    }
+
+    public void setCx(double cx) {
+        this.cx = cx;
+    }
+
+    public void setCy(double cy) {
+        this.cy = cy;
+    }
+
     public void setTamanho(int tamanho) {
         this.tamanho = tamanho;
     }
